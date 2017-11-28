@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -79,10 +80,17 @@ WSGI_APPLICATION = 'apples_to_vaginas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': os.path.join(BASE_DIR, 'dhireacms2ca8'),
+        'NAME': 'dhireacms2ca8',
+        'USER': 'mlllkiicugytvo',
+        'PASSWORD': '284def2780e7b511c88e1f35a17e752ce293f3386068efcb6d670d7c15f2ff9e',
+        'HOST': 'ec2-107-20-176-7.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+#DATABASES['default'] =  dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
