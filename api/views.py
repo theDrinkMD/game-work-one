@@ -1,12 +1,10 @@
-from django.http import JsonResponse
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from django.template import RequestContext, Context, loader
+
 
 def app_root(request):
-    data = {
-        'directory': {
-            'admin': request.build_absolute_uri('/admin'),
-            'api': {
-                'question': request.build_absolute_uri('/api/question')
-            }
-        }
-    }
-    return JsonResponse(data)
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render())
+
+    #return HttpResponse("<html><title>Hi</title><h1>suckittrebek</h1></html>")
