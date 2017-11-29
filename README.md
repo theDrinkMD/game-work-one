@@ -1,53 +1,63 @@
-# Heroku Django Starter Template
+# Game Work One
 
-An utterly fantastic project starter template for Django 1.11.
+## Prerequisites
 
-## Features
+#### Install Homebrew
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+If you're a Mac user and you don't have [Homebrew](https://brew.sh/), you should download and install it.
 
-## How to Use
+#### Install Python
 
-To use this project, follow these steps:
+You will need Python installed. We recommend using [pyenv](https://github.com/pyenv/pyenv). Run the following command and then follow the instructions given.
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+```bash
+brew install pyenv
+```
 
-## Creating Your Project
+Then, you'll want to install Python 3.6.3.
 
-Using this template to create a new Django app is easy::
+```bash
+pyenv install 3.6.3
+```
 
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
+Finally, confirm that things are working correctly by checking the version of Python from within the app directory.
 
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
+```bash
+MacBook-Pro:game-work-one pedro$ pyenv version
+3.6.3 (set by /Users/pedro/Projects/game-work-one/.python-version)
 
-You can replace ``helloworld`` with your desired project name.
+MacBook-Pro:game-work-one pedro$ python --version
+Python 3.6.3
+```
 
-## Deployment to Heroku
+#### Install Additional System Packages
 
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
+This app requires several other system packages to run. We maintain these within [our Brewfile](https://github.com/theDrinkMD/game-work-one/blob/master/Brewfile).
 
-    $ heroku create
-    $ git push heroku master
+If you have [Homebrew](http://brew.sh/) installed, you can run `brew bundle` to install them.
 
-    $ heroku run python manage.py migrate
+## Setup
 
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+#### Install App Dependencies
 
-## Using Python 2.7?
+```shell
+pip install heroku honcho
+pip install -r requirements.txt
+```
 
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
+#### Configuring Database
 
+Nothing needed here yet, apparently.
 
-## License: MIT
+## Starting Application
 
-## Further Reading
+```shell
+honcho start
+```
 
-- [Gunicorn](https://warehouse.python.org/project/gunicorn/)
-- [WhiteNoise](https://warehouse.python.org/project/whitenoise/)
-- [dj-database-url](https://warehouse.python.org/project/dj-database-url/)
+Then visit to confirm the app is working:
+`http://localhost:5000/api/question/`
+
+## Running Tests
+
+:(
