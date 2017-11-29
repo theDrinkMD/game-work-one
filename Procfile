@@ -1,1 +1,1 @@
-web: gunicorn apples_to_vaginas.wsgi
+web: gunicorn config.wsgi

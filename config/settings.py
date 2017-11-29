@@ -1,7 +1,4 @@
 """
-Django settings for apples_to_vaginas project on Heroku. For more info, see:
-https://github.com/heroku/heroku-django-template
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.11/topics/settings/
 
@@ -15,7 +12,6 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -53,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'apples_to_vaginas.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -72,8 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'apples_to_vaginas.wsgi.application'
-
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -81,7 +76,6 @@ WSGI_APPLICATION = 'apples_to_vaginas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        #'NAME': os.path.join(BASE_DIR, 'dhireacms2ca8'),
         'NAME': 'dhireacms2ca8',
         'USER': 'mlllkiicugytvo',
         'PASSWORD': '284def2780e7b511c88e1f35a17e752ce293f3386068efcb6d670d7c15f2ff9e',
@@ -89,8 +83,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
-#DATABASES['default'] =  dj_database_url.config()
 
 AUTH_PASSWORD_VALIDATORS = [
     {
