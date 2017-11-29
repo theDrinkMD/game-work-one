@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
+def app_root(request):
+    data = {
+        'directory': {
+            'admin': request.build_absolute_uri('/admin'),
+            'api': {
+                'question': request.build_absolute_uri('/api/question')
+            }
+        }
+    }
+    return JsonResponse(data)
