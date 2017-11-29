@@ -12,7 +12,7 @@ print("Got Page Data...")
 
 #urban_dictionary_word = game_word.GameWord()
 print("Got Game World...")
-urban_dictionary_words = urban_dictionary.getUdPageInfo(page_data)
+urban_dictionary_words = urban_dictionary.get_words_from_ud_page(page_data)
 
 for urban_dictionary_word in urban_dictionary_words:
     print("*****************************************************************")
