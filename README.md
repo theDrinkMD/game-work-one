@@ -47,6 +47,17 @@ pip install -r requirements.txt
 
 #### Configuring Database
 
+Nothing needed here yet, apparently.
+
 ## Starting Application
 
+```shell
+honcho start
+```
+
+Then visit to confirm the app is working:
+`http://localhost:5000/api/question/`
+
 ## Running Tests
+
+:(
