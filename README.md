@@ -41,8 +41,8 @@ If you have [Homebrew](http://brew.sh/) installed, you can run `brew bundle` to 
 #### Install App Dependencies
 
 ```shell
+pip install heroku honcho
 pip install -r requirements.txt
-pip install honcho
 ```
 
 #### Configuring Database
