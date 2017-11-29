@@ -19,7 +19,7 @@ def display_random_question(request):
     rnd_question_id = random.randint(1,all_questions)
     question_entry = Question.objects.get(pk=rnd_question_id)
     #goulet = 9
-    return HttpResponse("<html><title>Booties</title><h1>Word: "+ str(question_entry.question) + "</h1><h2>Definition: " + str(question_entry.definition) + "</h2><h3>Example: " + str(question_entry.example) + "</h3></html>")
+    return HttpResponse("<html><title>Booties</title><h1>Word: " + str(question_entry.question) + "</h1><h2>Definition: " + str(question_entry.definition) + "</h2><h3>Example: " + str(question_entry.example) + "</h3></html>")
 
 #I added this b/c when I was attempting to get to this path, it was freaking the fuck out
 @csrf_exempt
