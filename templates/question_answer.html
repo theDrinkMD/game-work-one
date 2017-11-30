@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello, Verld!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Optional  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  </head>
+  <body>
+  <span class="align-middle">
+    <div class="container-fluid">
+      <div class "d-flex flex-column">
+        <div class="p-sm-2">
+          Welcome to Redefyn!!!
+        </div>
+        <h2>Your word is: {{ question_entry.question }}</h2>
+        <div class="p-sm-4">
+          Jons Definition: {{ question_entry.definition }}
+        </div>
+        <form action="/player_response/" method="POST">
+          <div class="p-sm-2">
+            <div class="form-group" id="textarea-form-group">
+              <label for="playerResponse">Enter your fake definition</label>
+              <textarea class="form-control" id="playerResponse">Enter Response</textarea>
+            </div>
+            <div class="form-group" id="response-button-form-group">
+              <button type="submit" class="btn-primary" id="submit-response-button">Demo</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </span>
+  </body>
+</html>
