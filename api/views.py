@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext, Context, loader
 from django.views.decorators.csrf import csrf_exempt
-from api.models import Question
+from api.models import Question, PlayerResponse
 import random
 import logging
 
@@ -42,3 +42,18 @@ def display_random_question(request):
 def display_question(request):
     template = loader.get_template('jon.html')
     return HttpResponse(template.render())
+
+@csrf_exempt
+def save_player_response(request):
+    if request.method=='POST':
+        #logger.info(request.values.get('Body'))
+        logger.info(str(request.body))
+        #pr = PlayerResponse.objects.create(player_id=1,player_response=request.POST['playerResponse'])
+        #logger.info("The player_id is... " + str(pr.player_id))
+        #logger.info("The player response is... " + pr.player_response)
+        #pr.save()
+        return HttpResponse("<html><h1>Thanks!</h1></html>")
+    else:
+        return HttpResponse("<html>whodafuqisyou</html>")
+
+        #do something else

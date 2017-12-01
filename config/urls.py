@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^api/', include(player_resource.urls)),
     url(r'^api/', include(player_response_resource.urls)),
     url(r'^displayrandomquestion/', views.display_random_question),
+    url(r'^player_response/', views.save_player_response),
     #url(r'^displayquestion/random/', views.display_random_question),
     url(r'^$', views.app_root)
 ]

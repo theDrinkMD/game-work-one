@@ -13,21 +13,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-  <span class="align-middle">
+  <span class="align-left">
     <div class="container-fluid">
       <div class "d-flex flex-column">
-        <div class="p-sm-2">
-          Welcome to Redefyn!!!
+        <div class="p-lg-2">
+          <h1>{{ question_entry.question }}.</h1>
         </div>
-        <h2>Your word is: {{ question_entry.question }}</h2>
-        <div class="p-sm-4">
-          Jons Definition: {{ question_entry.definition }}
+        <div class="p-sm-1">
+          Definition: {{ question_entry.definition }}
         </div>
-        <form action="/player_response/" method="POST">
-          <div class="p-sm-2">
+        <div class="p-sm-1">
+          Example: "<i>{{question_entry.example}}</i>"
+        </div>
+        <form action="/player_response/" method="POST" enctype="text/plain">
+          <div class="p-sm-3">
             <div class="form-group" id="textarea-form-group">
-              <label for="playerResponse">Enter your fake definition</label>
-              <textarea class="form-control" id="playerResponse">Enter Response</textarea>
+              <label for="playerResponse">Enter a definition for the word listed above:</label>
+              <textarea class="form-control" id="playerResponse" placeholder="Define here..."></textarea>
             </div>
             <div class="form-group" id="response-button-form-group">
               <button type="submit" class="btn-primary" id="submit-response-button">Demo</button>
